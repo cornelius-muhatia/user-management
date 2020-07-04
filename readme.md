@@ -11,6 +11,7 @@ User management library for spring application. Features include:
 Handles creation, update and deletions of entity status. Default statuses include:
 1. New - Marks newly created entity pending approval
 1. Active - active entity
+1. Updated - Entity updated
 1. Deactivate - entity pending deactivation approval
 1. Deactivated - deactivated entity
 1. Activate - entity pending activation approval

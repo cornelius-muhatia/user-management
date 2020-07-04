@@ -25,7 +25,7 @@ import java.util.List;
  * @author Cornelius M.
  * @version 1.0.0, 20/06/2020
  */
-//@Configuration
+@Configuration
 public class DefaultValuesConfiguration {
 
     /**
@@ -50,6 +50,44 @@ public class DefaultValuesConfiguration {
      * @param statusRepository {@link StatusRepository} bean
      */
     public void createDefaultStatuses(StatusRepository statusRepository){
-        statusRepository.saveAll(List.of(Status.ACTIVE, Status.COMPLETED, Status.FAILED, Status.EXPIRED, Status.LOCKED));
+        if(statusRepository.findById(Status.NEW.getId()).isEmpty()){
+            statusRepository.save(Status.NEW);
+        }
+        if(statusRepository.findById(Status.ACTIVE.getId()).isEmpty()){
+            statusRepository.save(Status.ACTIVE);
+        }
+        if(statusRepository.findById(Status.UPDATED.getId()).isEmpty()){
+            statusRepository.save(Status.UPDATED);
+        }
+        if(statusRepository.findById(Status.DEACTIVATE.getId()).isEmpty()){
+            statusRepository.save(Status.DEACTIVATE);
+        }
+        if(statusRepository.findById(Status.DEACTIVATED.getId()).isEmpty()){
+            statusRepository.save(Status.DEACTIVATED);
+        }
+        if(statusRepository.findById(Status.ACTIVATE.getId()).isEmpty()){
+            statusRepository.save(Status.ACTIVATE);
+        }
+        if(statusRepository.findById(Status.LOCK.getId()).isEmpty()){
+            statusRepository.save(Status.LOCK);
+        }
+        if(statusRepository.findById(Status.LOCKED.getId()).isEmpty()){
+            statusRepository.save(Status.LOCKED);
+        }
+        if(statusRepository.findById(Status.UNLOCK.getId()).isEmpty()){
+            statusRepository.save(Status.UNLOCK);
+        }
+        if(statusRepository.findById(Status.DELETED.getId()).isEmpty()){
+            statusRepository.save(Status.DELETED);
+        }
+        if(statusRepository.findById(Status.COMPLETED.getId()).isEmpty()){
+            statusRepository.save(Status.COMPLETED);
+        }
+        if(statusRepository.findById(Status.FAILED.getId()).isEmpty()){
+            statusRepository.save(Status.FAILED);
+        }
+        if(statusRepository.findById(Status.EXPIRED.getId()).isEmpty()){
+            statusRepository.save(Status.EXPIRED);
+        }
     }
 }
