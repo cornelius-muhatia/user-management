@@ -17,7 +17,10 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
+ * Holds updated entity awaiting approval
+ *
  * @author cornelius
+ * @version 1.0.0
  */
 @Entity
 @Table(name = "temp_edited_record")
