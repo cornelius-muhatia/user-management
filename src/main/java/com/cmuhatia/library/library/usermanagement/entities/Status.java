@@ -38,30 +38,50 @@ public class Status implements Serializable {
 
     private static final long serialVersionUID = 1592648712L;
     /**
-     * Initializes status with status active. <br />
+     * Initializes status with status active. <br>
+     * <b><i>NB</i></b> Entity is not managed
+     */
+    public static final Status ACTIVATE = new Status(AppConstants.STATUS_ID_ACTIVATE, "Activate");
+    /**
+     * Initializes status with status active. <br>
      * <b><i>NB</i></b> Entity is not managed
      */
     public static final Status ACTIVE = new Status(AppConstants.STATUS_ID_ACTIVE, "Active");
     /**
-     * Initializes status with only the ID. <br />
+     * Initializes status with only the ID. <br>
      * <b><i>NB</i></b> Entity is not managed
      */
-    public static final Status EXPIRED = new Status(AppConstants.STATUS_ID_EXPIRED);
+    public static final Status EXPIRED = new Status(AppConstants.STATUS_ID_EXPIRED, "Expired");
     /**
-     * Initializes status with only the ID. <br />
+     * Initializes status with only the ID. <br>
      * <b><i>NB</i></b> Entity is not managed
      */
-    public static final Status NEW = new Status(AppConstants.STATUS_ID_NEW, AppConstants.STATUS_NEW);
+    public static final Status NEW = new Status(AppConstants.STATUS_ID_NEW, "New");
     /**
-     * Initializes status with only the ID. <br />
+     * Initializes status with only the ID. <br>
      * <b><i>NB</i></b> Entity is not managed
      */
-    public static final Status LOCKED = new Status(AppConstants.STATUS_ID_LOCKED);
+    public static final Status LOCK = new Status(AppConstants.STATUS_ID_LOCK, "Lock");
     /**
-     * Initializes status with only the ID. <br />
+     * Initializes status with only the ID. <br>
      * <b><i>NB</i></b> Entity is not managed
      */
-    public static final Status DEACTIVATED = new Status(AppConstants.STATUS_ID_DEACTIVATED);
+    public static final Status LOCKED = new Status(AppConstants.STATUS_ID_LOCKED, "Locked");
+    /**
+     * Initializes status with only the ID. <br>
+     * <b><i>NB</i></b> Entity is not managed
+     */
+    public static final Status UNLOCK = new Status(AppConstants.STATUS_ID_UNLOCK, "Unlock");
+    /**
+     * Initializes status with only the ID. <br>
+     * <b><i>NB</i></b> Entity is not managed
+     */
+    public static final Status DEACTIVATE = new Status(AppConstants.STATUS_ID_DEACTIVATE, "Deactivate");
+    /**
+     * Initializes status with only the ID. <br>
+     * <b><i>NB</i></b> Entity is not managed
+     */
+    public static final Status DEACTIVATED = new Status(AppConstants.STATUS_ID_DEACTIVATED, "Deactivated");
     /**
      * Initializes status with failed
      * <b><i>NB</i></b> Entity is not managed
@@ -72,6 +92,11 @@ public class Status implements Serializable {
      * <b><i>NB</i></b> Entity is not managed
      */
     public static final Status COMPLETED = new Status(AppConstants.STATUS_ID_COMPLETED, AppConstants.STATUS_COMPLETED);
+    /**
+     * Initializes status with completed
+     * <b><i>NB</i></b> Entity is not managed
+     */
+    public static final Status DELETED = new Status(AppConstants.STATUS_ID_DELETED, "Deleted");
 
     @Id
     @Basic(optional = false)

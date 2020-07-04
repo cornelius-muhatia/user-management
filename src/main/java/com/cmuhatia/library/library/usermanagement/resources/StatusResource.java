@@ -33,6 +33,17 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 /**
+ * Status Rest Resource. Actions include:
+ * <ul>
+ *     <li>Status Creation</li>
+ *     <li>Status Update</li>
+ *     <li>List Statuses</li>
+ *     <li>Delete Status</li>
+ * </ul>
+ * <p>
+ *     <strong>NB: </strong><br>
+ *     Doesn't support maker checker
+ * </p>
  * @author Cornelius M.
  * @version 1.0.0, 20/06/2020
  */
@@ -41,42 +52,55 @@ import java.util.List;
 @ApiOperation(value = "Status Resource", notes = "Used to manage entity statuses")
 public class StatusResource extends ChasisResource<Status, Short, TempEditedRecord> {
 
+    /**
+     * Default constructor
+     *
+     * @param loggerService {@link LoggerService} bean
+     * @param entityManager {@link EntityManager} bean
+     */
     public StatusResource(LoggerService loggerService, EntityManager entityManager) {
         super(loggerService, entityManager);
     }
 
+
     @Override
     @ApiIgnore
+    @Deprecated
     public ResponseEntity<ResponseWrapper<List<String>>> approveActions(@Valid ActionWrapper<Short> actions) throws NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException {
         throw new UnsupportedOperationException("Not supported on this resource");
     }
 
     @Override
     @ApiIgnore
+    @Deprecated
     public ResponseEntity<ResponseWrapper> declineActions(@Valid ActionWrapper<Short> actions) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
         throw new UnsupportedOperationException("Not supported on this resource");
     }
 
     @Override
     @ApiIgnore
+    @Deprecated
     public ResponseEntity<ResponseWrapper<List<String>>> deactivateRecord(@Valid ActionWrapper<Short> actions) throws NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException {
         throw new UnsupportedOperationException("Not supported on this resource");
     }
 
     @Override
     @ApiIgnore
+    @Deprecated
     public ResponseEntity<ResponseWrapper<List<String>>> activateRecord(@Valid ActionWrapper<Short> actions) throws NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException {
         throw new UnsupportedOperationException("Not supported on this resource");
     }
 
     @Override
     @ApiIgnore
+    @Deprecated
     public ResponseEntity<ResponseWrapper<List<String>>> lockRecord(@Valid ActionWrapper<Short> actions) throws NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException {
         throw new UnsupportedOperationException("Not supported on this resource");
     }
 
     @Override
     @ApiIgnore
+    @Deprecated
     public ResponseEntity<ResponseWrapper<List<String>>> unLockRecord(@Valid ActionWrapper<Short> actions) throws NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException {
         throw new UnsupportedOperationException("Not supported on this resource");
     }
