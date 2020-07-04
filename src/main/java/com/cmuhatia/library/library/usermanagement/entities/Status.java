@@ -122,7 +122,7 @@ public class Status implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 20)
-    @Column(name = "name")
+    @Column(name = "name", unique = true)
     @Unique(fieldName = "Status Name")
     @ModifiableField(name = "Status Name")
     private String name;
