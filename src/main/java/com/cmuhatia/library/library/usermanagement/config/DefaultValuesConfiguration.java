@@ -19,7 +19,6 @@ import com.cmuhatia.library.library.usermanagement.entities.Status;
 import com.cmuhatia.library.library.usermanagement.repository.StatusRepository;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.List;
 
 /**
  * @author Cornelius M.
