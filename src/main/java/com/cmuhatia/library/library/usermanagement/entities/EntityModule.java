@@ -27,7 +27,9 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
+ *
  * @author cornelius
+ * @version 1.0.0
  */
 @NickName(name = "Module")
 @Entity

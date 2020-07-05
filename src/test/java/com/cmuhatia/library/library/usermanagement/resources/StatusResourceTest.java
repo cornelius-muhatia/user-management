@@ -17,6 +17,7 @@ package com.cmuhatia.library.library.usermanagement.resources;
 
 import com.cm.projects.spring.resource.chasis.wrappers.ActionWrapper;
 import com.cm.projects.spring.resource.chasis.wrappers.ResponseWrapper;
+import com.cmuhatia.library.library.usermanagement.entities.CustomPageImpl;
 import com.cmuhatia.library.library.usermanagement.entities.Status;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.data.domain.Page;
@@ -41,14 +42,28 @@ public class StatusResourceTest {
      */
     private final WebTestClient webClient;
 
+    /**
+     * Default constructor
+     *
+     * @param webClient {@link WebTestClient}
+     */
     public StatusResourceTest(WebTestClient webClient) {
         this.webClient = webClient;
     }
 
+    /**
+     * Handles all test cases:
+     * <ul>
+     *     <li>Creation {@link #testCreation()}</li>
+     *     <li>Update {@link #testUpdate(Short)}</li>
+     *     <li>Deletion {@link #testDeletion(Short)}</li>
+     *     <li>Fetch {@link #testFetch()}</li>
+     * </ul>
+     */
     public void statusTests(){
         Short id = this.testCreation();
         this.testUpdate(id);
-        this.getStatuses();
+        this.testFetch();
         this.testDeletion(id);
     }
 
@@ -171,7 +186,7 @@ public class StatusResourceTest {
      * </ul>
      */
     private void testFetch(){
-        ResponseWrapper<Page<Status>> response = this.getStatuses().expectStatus().isOk().returnResult(new ParameterizedTypeReference<ResponseWrapper<Page<Status>>>() {
+        ResponseWrapper<CustomPageImpl<Status>> response = this.getStatuses().expectStatus().isOk().returnResult(new ParameterizedTypeReference<ResponseWrapper<CustomPageImpl<Status>>>() {
         }).getResponseBody().blockFirst();
 
         assertTrue(Objects.requireNonNull(response).getData().getTotalElements() > 0);

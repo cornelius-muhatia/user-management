@@ -1,5 +1,6 @@
 package com.cmuhatia.library.library.usermanagement;
 
+import com.cmuhatia.library.library.usermanagement.resources.ModuleResourceTest;
 import com.cmuhatia.library.library.usermanagement.resources.StatusResourceTest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -40,6 +41,12 @@ class UsermanagementApplicationTests {
 	void statusResource() {
 		StatusResourceTest statusResource = new StatusResourceTest(webClient);
 		statusResource.statusTests();
+	}
+
+	@Test
+	void moduleResource(){
+		ModuleResourceTest moduleResourceTest = new ModuleResourceTest(webClient);
+		moduleResourceTest.moduleTests();
 	}
 
 }
